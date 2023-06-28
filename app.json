@@ -1,0 +1,23 @@
+{
+  "name": "Your App Name",
+  "description": "Your app description",
+  "stack": "heroku-20",
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "env": {
+    "FLASK_APP": "app.py",
+    "FLASK_ENV": "production"
+  },
+  "scripts": {
+    "postdeploy": "python -m pip install -r requirements.txt"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
+}
